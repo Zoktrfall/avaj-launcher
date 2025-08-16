@@ -32,6 +32,6 @@ public class Balloon extends Aircraft {
                 break;
         }
 
-        HandleLanding();
+        handleLanding();
     }
 }

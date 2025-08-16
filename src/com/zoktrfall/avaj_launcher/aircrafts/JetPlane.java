@@ -32,6 +32,6 @@ public class JetPlane extends Aircraft {
                 break;
         }
 
-        HandleLanding();
+        handleLanding();
     }
 }

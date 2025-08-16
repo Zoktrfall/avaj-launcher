@@ -32,6 +32,6 @@ public class Helicopter extends Aircraft {
                 break;
         }
 
-        HandleLanding();
+        handleLanding();
     }
 }

@@ -9,7 +9,7 @@ public abstract class Aircraft extends Flyable {
     protected Coordinates coordinates;
 
     public String getLogPrefix() {
-        return this.getClass().getSimpleName().toUpperCase() + "#" + name + "(" + id + ")";
+        return this.getClass().getSimpleName() + "#" + name + "(" + id + ")";
     }
     public long getId() {
         return id;
@@ -21,7 +21,7 @@ public abstract class Aircraft extends Flyable {
         this.coordinates = coordinates;
     }
 
-    protected void HandleLanding() {
+    protected void handleLanding() {
         if (coordinates.getHeight() <= 0) {
             Logger.log(getLogPrefix() + ": landing.");
             if (weatherTower != null) {
@@ -29,18 +29,4 @@ public abstract class Aircraft extends Flyable {
             }
         }
     }
-
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) return true;
-//        if (obj == null || getClass() != obj.getClass()) return false;
-//
-//        Aircraft other = (Aircraft) obj;
-//        return this.id == other.id;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Integer.hashCode((int) id);
-//    }
 }

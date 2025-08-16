@@ -20,15 +20,11 @@ public class AircraftFactory {
             throws InvalidAircraftTypeException {
         long id = IdGenerator.nextId();
 
-        switch (p_type.toUpperCase()) {
-            case "BALLOON":
-                return new Balloon(id, p_name, p_coordinates);
-            case "HELICOPTER":
-                return new Helicopter(id, p_name, p_coordinates);
-            case "JETPLANE":
-                return new JetPlane(id, p_name, p_coordinates);
-            default:
-                throw new InvalidAircraftTypeException("Unknown aircraft type: " + p_type);
-        }
+        return switch (p_type.toUpperCase()) {
+            case "BALLOON" -> new Balloon(id, p_name, p_coordinates);
+            case "HELICOPTER" -> new Helicopter(id, p_name, p_coordinates);
+            case "JETPLANE" -> new JetPlane(id, p_name, p_coordinates);
+            default -> throw new InvalidAircraftTypeException("Unknown aircraft type: " + p_type);
+        };
     }
 }

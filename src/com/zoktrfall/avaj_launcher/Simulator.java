@@ -31,7 +31,7 @@ public class Simulator {
             List<Flyable> aircrafts = new ArrayList<>();
             WeatherTower weatherTower = new WeatherTower();
 
-            int simulationCount = ProcessSimulation(fileName, aircrafts, weatherTower);
+            int simulationCount = processSimulation(fileName, aircrafts, weatherTower);
 
             for (int i = 0; i < simulationCount; i++) {
                 weatherTower.changeWeather();
@@ -46,7 +46,7 @@ public class Simulator {
         }
     }
 
-    private static int ProcessSimulation(String fileName, List<Flyable> aircrafts, WeatherTower weatherTower)
+    private static int processSimulation(String fileName, List<Flyable> aircrafts, WeatherTower weatherTower)
             throws IOException, SimulationException, NumberFormatException {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
